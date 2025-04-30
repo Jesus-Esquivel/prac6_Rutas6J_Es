@@ -8,20 +8,43 @@ class PantallaTres extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text(
-          'Pantallatres',
-          style: const TextStyle(
+          'Pantalla 3 Esquivel',
+          textAlign: TextAlign.center,
+          style: TextStyle(
             color: Colors.white,
             fontSize: 25,
           ),
         ),
-        backgroundColor: Color(0xff007e0a),
+        centerTitle: true,
+        backgroundColor: const Color(0xff051a2c),
       ),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          child: const Text('Regresar'),
+        // Corrected: Added the missing parenthesis.
+        child: Stack(
+          alignment: AlignmentDirectional.center,
+          children: <Widget>[
+            SizedBox(
+              width: 200.0,
+              height: 100.0,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: const Text('Botón Ancho'),
+              ),
+            ),
+            SizedBox(
+              width: 100.0,
+              height: 200.0,
+              child: AbsorbPointer(
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.blue.shade200,
+                  ),
+                  onPressed: () {},
+                  child: null,
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
